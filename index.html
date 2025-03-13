@@ -19,14 +19,21 @@
 
     <script>
         function convert() {
-            // Obtener los valores de los inputs y convertirlos a números
-            const celsius = parseFloat(document.getElementById('input1').value);
-            const fahrenheit = (celsius * 9/5) + 32;
-            console.log("Fahrenheit:", fahrenheit);
-            const kelvin = celsius + 273.15;
-            console.log("Kelvin:", kelvin);
-            document.getElementById('resultado').textContent = "Fahrenheit: " + fahrenheit + " Kelvin: " + kelvin;
+            let valorInput1 = document.getElementById('input1').value;
+            let numero = Number(valorInput1);
+            if (!isNaN(numero) && valorInput1.trim() !== "") {
+                // Obtener los valores de los inputs y convertirlos a números
+                const celsius = parseFloat(document.getElementById('input1').value);
+                const fahrenheit = (celsius * 9/5) + 32;
+                console.log("Fahrenheit:", fahrenheit);
+                const kelvin = celsius + 273.15;
+                console.log("Kelvin:", kelvin);
+                document.getElementById('resultado').textContent = "Fahrenheit: " + fahrenheit + " Kelvin: " + kelvin;
+            } else {
+                document.getElementById('resultado').textContent = "No es un número, ingrese correctamente";
+            }
         }
+        
     </script>
     
 </body>
