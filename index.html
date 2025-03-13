@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+</head>
+<body>
+    <h1>Convertir de Celsius a Kelvin y Fahrenheit</h1>
+
+    <!-- Inputs para ingresar números -->
+    <input type="number" id="input1" placeholder="Grados Celcius">
+
+    <!-- Botón para ordenar -->
+    <button onclick="convert()">Convertir</button>
+
+    <!-- Elemento para mostrar el resultado -->
+    <p id="resultado"></p>
+
+    <script>
+        function convert() {
+            // Obtener los valores de los inputs y convertirlos a números
+            const celsius = parseFloat(document.getElementById('input1').value);
+            const fahrenheit = (celsius * 9/5) + 32;
+            console.log("Fahrenheit:", fahrenheit);
+            const kelvin = celsius + 273.15;
+            console.log("Kelvin:", kelvin);
+            document.getElementById('resultado').textContent = "Fahrenheit: " + fahrenheit + " Kelvin: " + kelvin;
+        }
+    </script>
+    
+</body>
+</html>
